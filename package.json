@@ -19,15 +19,15 @@
       "default": "./dist/utils.js"
     }
   },
-  "scripts": {
-    "build": "tsup",
-    "test": "jest",
-    "lint": "eslint",
-    "format": "prettier --ignore-path .gitignore --write \"./src/**/*.+(js|ts|json)\"",
-    "download": "node ./dist/download.js",
-    "postinstall": "node -e \"process.env.INIT_CWD !== process.cwd() && require('child_process').execSync('npm run download', { stdio: 'inherit' });\"",
-    "prepare": "husky"
-  },
+ "scripts": {
+  "build": "tsup",
+  "test": "jest",
+  "lint": "eslint",
+  "format": "prettier --ignore-path .gitignore --write \"./src/**/*.+(js|ts|json)\"",
+  "download": "node ./dist/download.js",
+  "postinstall": "node -e \"process.env.INIT_CWD !== process.cwd() && require('child_process').execSync('npm run download', { stdio: 'inherit' });\"",
+  "prepare": "npm run build && husky"
+  }
   "keywords": [
     "yt-dlp",
     "youtube",
